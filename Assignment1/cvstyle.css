@@ -55,6 +55,20 @@ a {
     height: 20px;
 }
 
+.Information_Top_parent {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    padding: 20px 20px 30px 20px;
+
+}
+
+ul {
+    list-style: circle;
+}
+
+.right_section {}
+
 .left_section {
     display: flex;
     flex-direction: column;
@@ -87,12 +101,12 @@ a {
     max-width: 100px;
     align-items: center;
     justify-content: center;
-    border-radius: 12px;
+    border-radius: 8px;
     cursor: pointer;
 
 }
 
-.tools p:hover {
+.skills p:hover {
     background-color: rgba(20, 20, 63, 0.8);
     font-size: 14px;
 }
@@ -113,7 +127,7 @@ a {
     max-width: 100px;
     align-items: center;
     justify-content: center;
-    border-radius: 12px;
+    border-radius: 8px;
     cursor: pointer;
 
 }
@@ -121,6 +135,13 @@ a {
 .tools p:hover {
     background-color: rgba(20, 20, 63, 0.8);
     font-size: 14px;
+}
+
+.right_section {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 10px;
 }
 
 

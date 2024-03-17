@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
+p:hover{
+    color: #1717e9;
+}
 html {
     font-family: 'Inter', Arial, sans-serif;
 }
@@ -67,7 +69,7 @@ ul {
     list-style: circle;
 }
 
-.right_section {}
+
 
 .left_section {
     display: flex;
@@ -77,6 +79,7 @@ ul {
     overflow: hidden;
     border-right: 2px solid gray;
     margin-top: 10px;
+    transition: 0.5s left ease-in;
 }
 
 .skills h2 {
@@ -118,7 +121,11 @@ ul {
     margin-top: 20px;
     gap: 10px;
 }
-
+.tools h2 {
+    font-weight: bold;
+    margin-bottom: 20px;
+    width: 100em;
+}
 .tools p {
     background-color: rgba(20, 20, 63, 0.965);
     padding: 10px;
@@ -141,7 +148,7 @@ ul {
     display: flex;
     flex-direction: column;
     gap: 50px;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
 
@@ -161,5 +168,15 @@ ul {
 
     .image_container {
         margin-left: 0px;
+    }
+}
+@media (max-width: 690px){
+    .Information_Top_parent{
+        flex-direction: column;
+    }
+    .left_section{
+        width: 90vw;
+        border: 0px;
+        border-bottom: 2px solid gray;
     }
 }

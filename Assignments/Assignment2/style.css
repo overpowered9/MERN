@@ -1,3 +1,42 @@
+*{
+    font-family: sans-serif;
+}
+
+.navbar{
+    padding-right: 20px;
+    position: sticky;
+    top: 0px;
+}
+.nav_ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    font-weight: 400;
+    align-items: center;
+    gap: 50px;
+}
+#button_np{
+    color: red;
+    height: 50px;
+    position: absolute;
+    top: 200px;
+}
+.login_button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.loginimage{
+    height: 30px;
+    width: 30px;
+}
+.email{
+    height: 30px;
+    border-bottom: 1px solid gray;
+    background-color:rgb(241, 241, 241);
+    font-size: 14px;    
+    padding: 5px;
+}
 .carousel-inner{
     height: 600px;
 }

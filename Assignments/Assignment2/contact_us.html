@@ -30,5 +30,22 @@
   </div>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#contactForm').submit(function(event) {
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var message = $('#message').val();
+
+        if (!name || !email || !message) {
+          alert('Please fill out all fields.');
+          event.preventDefault(); // Prevent form submission
+        }
+        else{
+            alert("Sumbitted")
+        }
+      });
+    });
+  </script>
 </body>
 </html>

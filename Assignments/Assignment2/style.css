@@ -15,6 +15,9 @@
     align-items: center;
     gap: 50px;
 }
+.carousel-inner{
+    max-height: 510px;
+}
 #button_np{
     color: red;
     height: 50px;

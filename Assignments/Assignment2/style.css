@@ -43,3 +43,22 @@
 .carousel-inner{
     height: 600px;
 }
+.Contact-us-button{
+    margin-top: 30px;
+    display: flex;
+width: 90vw;
+align-items: center;
+justify-content: space-around;
+}
+.Contact-us-button button{
+    background-color: rgb(190, 85, 11);
+    color: goldenrod;
+    border-radius: 8px;
+    max-width: 170px;
+    padding: 10px;
+}
+
+.Contact-us-button button a{
+    color: wheat;
+    text-underline-offset: 5px;
+}

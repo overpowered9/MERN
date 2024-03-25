@@ -3,7 +3,7 @@ const calorie_app=express();
 calorie_app.use("json");
 
 function calculate_calorie(weight,height){
-    return 100;
+    return (100-height+weight);
 }
 calorie_app.listen(4000,()=>console.log(`it's alive on`));
 

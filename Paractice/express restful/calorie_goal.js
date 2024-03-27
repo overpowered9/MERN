@@ -14,4 +14,13 @@ calorie_app.post("/post_calorie",(req,res)=>{
 const {id}=req.params;
 const {logo}=req.body;
 logo?res.send({tshirt:`"with your logo ${logo} and id : ${id}"`}):res.status(418).send({message:'try logo'})
+})const express= require ("express");
+const mongoose=require("mongoose");
+let server=express();
+server.listen(4000,()=>{
+    console.log("server listening 4000");
+});
+server.get("/api/students",function(req,res){
+let student=[{name:"Hassan", Address:"kusoor"},{name:"Ali", Address:"SKP"}]
+    res.send(student);
 })

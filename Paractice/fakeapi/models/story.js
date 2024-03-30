@@ -1,7 +1,10 @@
-const mongoose= require("mongoose");
-let storyschema=mongoose.Schema({
-    title:String,
-    story:String
+const mongoose = require("mongoose");
+
+const storySchema = mongoose.Schema({
+    title: String,
+    story: String
 });
-let Story=mongoose.model('Story',storyschema);
-module.exports=Story;
+
+const Story = mongoose.model('Story', storySchema);
+
+module.exports = Story;

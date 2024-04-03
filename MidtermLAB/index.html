@@ -8,13 +8,98 @@
 </head>
 <body>
     <div class="Sale">
+        <p id="menu-item"></p>
         <a class=""> <strong>SPRING SALE! Subscribe now and save.</strong> <a href="#" class="italic underline">Don't Miss Out >></a> </a>
     </div>
-    <div class="bg-[#ffcd05] w-[100%] flex-row">
+    <div class="nav">
     <ul class="ul_nav">
-        <li>sections</li>
-        <li>search</li>
+        
+        <li><img src="./source/burger-menu-svgrepo-com.svg" alt="">Sections</li>
+        <li><img src="./source/search-svgrepo-com.svg" alt="">Search</li>
     </ul>
+    <div class="logo">
+        <img src="./source/Screenshot 2024-04-03 123724.png" alt="">
     </div>
+    <div class="Button_parent">
+        <button class="Button_Sub"> Subscribe</button>
+        <button class="Button_sign">Sign In</button>
+        </div>
+    </div>
+    <ul class="nav_names">
+        <li>News Letters</li>
+        <li>Canada</li>
+        <li>World</li>
+        <li>Finance</li>
+        <li>Np Commment</li>
+        <li>Puzmo</li>
+        <li>Life</li>
+        <li>Eaper</li>   
+    </ul>
+    <div class="headlines">
+        <div class="4_news"><img src="https://smartcdn.gprod.postmedia.digital/nationalpost/wp-content/uploads/2024/04/joe.jpg?quality=90&strip=all&w=150&type=webp&sig=hRkj1q_hz7VP9y03tR-4Fg" alt=""><p>Colby Cosh: Joe Flaherty was a superb impressionist with a strong taste for random</p></div>
+        <div class="4_news"><img src="https://smartcdn.gprod.postmedia.digital/nationalpost/wp-content/uploads/2024/04/22951507-the-canadian-press.jpg?quality=90&strip=all&w=150&type=webp&sig=88vVdqaDI91FKHTRBYWOcg" alt=""><p>Queen's introducing lottery system to medical school admissions process to increase diversity</p></div>
+        <div class="4_news"><img src="https://smartcdn.gprod.postmedia.digital/nationalpost/wp-content/uploads/2024/04/police-data-3_91667556-w.jpg?quality=90&strip=all&w=150&type=webp&sig=pYdxprhHYSobRskjnPfUig" alt=""><p>Edmonton boy, 11, dies after mauling by two 'very large' dogs while visiting residence</p></div>
+        <div class="4_news"><img src="https://smartcdn.gprod.postmedia.digital/nationalpost/wp-content/uploads/2023/10/nahanni-river-paddling-adventure-unesco-river-scaled.jpg?quality=90&strip=all&w=150&type=webp&sig=SOKAxjiXfIpTLkcQeiF6PA" alt=""><p>How I survived the Nahanni — Canada's 'Holy Grail' river of legend and literature</p></div>
+    </div>
+    <div class="line_parent">
+
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <div class="news">
+        <div class="leftsection">
+            <div class="news_inner">
+                <h3>Canadian Politics</h3>
+                <p>
+                    Either the carbon tax goes or 'the prime minister’s going,' Doug Ford tells reporters</p>
+            <div class="comments_video">
+                <p><img src="./source/Screenshot 2024-04-03 131318.png" alt="">with video</p>
+                <p><img src="./source/Screenshot 2024-04-03 131404.png" alt="">Comment</p>
+                
+            </div>
+             </div>
+             <div class="news_inner">
+                <h3>Canadian Politics</h3>
+                <p>
+                    Either the carbon tax goes or 'the prime minister’s going,' Doug Ford tells reporters</p>
+            <div class="comments_video">
+                <p><img src="./source/Screenshot 2024-04-03 131318.png" alt="">with video</p>
+                <p><img src="./source/Screenshot 2024-04-03 131404.png" alt="">Comment</p>
+                
+            </div>
+             </div>
+        </div>
+        <div class="midsection">
+            <img src="https://smartcdn.gprod.postmedia.digital/nationalpost/wp-content/uploads/2024/04/20240402_CORE_Calgary_JW014.jpg?quality=90&strip=all&w=466&type=webp&sig=j5vuou9S4uBXog8aQUwCBw" alt="">
+        </div>
+        <div class="rightsection"><p>Latest Videos</p></div>
+    </div>
+    <script>
+        // Get the menu item
+        const menuItem = document.getElementById('menu-item');
+
+        // Get all the images
+        const images = document.querySelectorAll('img');
+
+        // Add event listeners to each image
+        images.forEach(image => {
+            image.addEventListener('mouseover', function() {
+                // Get the alt attribute (image name)
+                const imageName = this.alt;
+
+                // Update the text of the menu item
+                menuItem.textContent = imageName;
+
+                // Show the text
+                menuItem.classList.add('hovered-image');
+            });
+
+            image.addEventListener('mouseout', function() {
+                // Hide the text when mouse leaves the image
+                menuItem.classList.remove('hovered-image');
+            });
+        });
+    </script>
 </body>
 </html>

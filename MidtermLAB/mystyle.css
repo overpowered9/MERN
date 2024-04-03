@@ -1,0 +1,21 @@
+.Sale{
+    color: #191919;
+    background-color: rgb(190, 181, 181);
+    line-height: 1.25rem;
+    width: 100vw;
+    font-size: 20px;
+    height: 47px;
+    padding: 10px;
+}
+.ul_nav{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding-left: 10px;
+}
+.ul_nav li{
+    list-style-type: none;
+    color: #191919;
+    font-size: 15.2px;
+    font-weight: 600;
+}

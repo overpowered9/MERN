@@ -16,7 +16,7 @@ server.post('/api/story', async function(req, res) {
     res.send(story1); // Send the entire story object back as the response
 });
 server.delete('/api/story/:id',async function(req,res){
-let story = await Story
+let story = await Story.findByID
 })
 
 mongoose.connect('mongodb+srv://zaidvirk50:1CG6tTJ9O2vdjV2x@cluster0.5ahbm.mongodb.net/stories').then(()=>{

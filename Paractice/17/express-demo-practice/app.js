@@ -1,10 +1,14 @@
 const express = require('express');
 
 const app = express(); 
-const PORT = 3000; 
-app.get("/",async (req,res)=>{
-	res.send("Hy");
-})
+const PORT = 3000;
+
+app.set('view engine','ejs');
+app.set('views','./views')
+app.get('/', (req, res) => {
+    // Render the 'homepage' view
+    res.render('homepage');
+});
 app.listen(PORT, (error) =>{ 
 	if(!error) 
 		console.log(`Server is Successfully Running, 

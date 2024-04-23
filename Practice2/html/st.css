@@ -1,0 +1,29 @@
+
+.header{
+    display: none;
+    justify-content: center;
+    background-color: aqua;
+}
+.header ul{
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 0;
+    padding: 30px;
+    gap: 90px;
+    background-color: rgb(133, 133, 192);
+}
+.header ul li{
+
+}
+.text2{
+    position: absolute;
+    top:0;
+    /* top:50px */
+}
+.red{
+    background-color: red;
+     position: absolute;
+     height: 60px;
+     width: 60px;
+}

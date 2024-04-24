@@ -1,5 +1,13 @@
-// Get the button element by its ID
-const button = document.getElementById('myButton');
-document.getElementById('button').addEventListener('mouseenter',()=>{
-    button.innerHTML='not ok'
-})
+window.onload = dobind;
+
+function dobind() {
+    const button = document.getElementById('button');
+
+    function buttonok() {
+        button.addEventListener('click', () => {
+            button.innerHTML = 'not ok';
+        });
+    }
+
+    buttonok();
+}

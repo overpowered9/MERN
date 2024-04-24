@@ -1,13 +1,18 @@
-window.onload = dobind;
+// window.onload = dobind;
 
-function dobind() {
-    const button = document.getElementById('button');
+// function dobind() {
+//     const button = document.getElementById('button');
 
-    function buttonok() {
-        button.addEventListener('click', () => {
-            button.innerHTML = 'not ok';
-        });
-    }
+//     function buttonok() {
+//         // button.addEventListener('click', () => {
+//         //     button.innerHTML = 'not ok';
+//         // });
+//         button.setAttribute('class','y')
+//     console.log(button.attributes)  
+// var newh=document.createElement('h2');
+// newh.innerHTML='wow';
+// }
 
-    buttonok();
-}
+//     buttonok();
+// }
+// $(document).ready(function () {})

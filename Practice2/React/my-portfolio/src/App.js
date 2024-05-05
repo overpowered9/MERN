@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-
+import './index.css';
 function App() {
   return (
     <div className="App">
@@ -18,6 +18,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <div className="bg-black text-red-600">hy</div>
     </div>
   );
 }

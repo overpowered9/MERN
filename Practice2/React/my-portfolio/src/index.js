@@ -1,14 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import './index.css'; 
 import reportWebVitals from './reportWebVitals';
 import Header from './components/header';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <div className=" h-[100vh] bg-slate-400">
     <Header></Header>
+    </div>
+    
   </React.StrictMode>
 );
 

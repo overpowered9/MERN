@@ -3,13 +3,19 @@ import ReactDOM from 'react-dom/client';
 import './index.css'; 
 import reportWebVitals from './reportWebVitals';
 import Header from './components/header';
-
+import Intro from './components/intro/intro';
+import AnimatedImage from './components/animated_image_dtou/animatedimage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <div className=" h-[100vh] bg-slate-400">
+    <div className=" bg-slate-400">
     <Header></Header>
+    <div className="flex sm:flex flex-row-reverse">
+    <Intro></Intro>
+    <AnimatedImage></AnimatedImage>
+    </div>
+    
     </div>
     
   </React.StrictMode>

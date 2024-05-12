@@ -8,6 +8,7 @@ server.set("view engine", "ejs");
 server.use(express.static("public"));
 
 server.get("/api/stories",function(req,res){
+    console.log('ok');
     res.send([
         {title:"Story 1",Content:"story 1 content"},
         {title:"Story 2",Content:"story 2 content"}

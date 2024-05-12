@@ -4,7 +4,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Header from './components/header';
 import Intro from './components/intro/intro';
-import AnimatedImage from './components/animated_image_dtou/animatedimage';
+import AnimatedImage from './components/animated_/animatedimage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

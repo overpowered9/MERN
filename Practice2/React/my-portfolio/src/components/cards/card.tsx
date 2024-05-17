@@ -7,4 +7,4 @@ function Card(prop:String){
     </div>
     </>)
 }
-export default 
+export default Card;

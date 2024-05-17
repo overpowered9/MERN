@@ -9,7 +9,7 @@ const Intro = () => {
 {color:'white',fontWeight:'bold',fontFamily:'monospace', fontSize:'40px'}
             }>
                 <p className="font-mono text-sm sm:text-xl font-extrabold">Hi, I am</p>
-            <Typewriter cursor typeSpeed={100} className="font-mono text-sm"
+            <Typewriter cursor typeSpeed={100} className="font-mono text-xs"
             cursorStyle='.' cursorBlinking={false} words={['Zaid Asghar Virk']}></Typewriter> 
             <br /> 
            

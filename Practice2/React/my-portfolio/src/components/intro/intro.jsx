@@ -8,13 +8,11 @@ const Intro = () => {
             <div style={
 {color:'white',fontWeight:'bold',fontFamily:'monospace', fontSize:'40px'}
             }>
-                <p className="font-mono text-xl font-extrabold">Hi, I am</p>
+                <p className="font-mono text-sm sm: text-xl font-extrabold">Hi, I am</p>
             <Typewriter cursor typeSpeed={100}
             cursorStyle='.' cursorBlinking={false} words={['Zaid Asghar Virk']}></Typewriter> 
             <br /> 
-            <div> 
-
-            </div>
+           
             <Typewriter
                 typeSpeed={200}
                 deleteSpeed={50}

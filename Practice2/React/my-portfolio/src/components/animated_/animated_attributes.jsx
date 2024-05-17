@@ -1,12 +1,14 @@
 import React from 'react';
 import 'animate.css/animate.min.css';
-import dpi from '../../assets/image.png'
-const AnimatedImage = () => {
+import Card from '../cards/card';
+const Animated_Attr = () => {
     return (
-        <div className="animate__animated animate__fadeInUp animate__slow sm:w-[300px]">
-        
+        <div className=" flex flex-row animate__animated animate__fadeInUp animate__slow">
+            <Card></Card>
+            <Card></Card>
+            <Card></Card>
         </div>
     );
 };
 
-export default AnimatedImage;
+export default Animated_Attr;

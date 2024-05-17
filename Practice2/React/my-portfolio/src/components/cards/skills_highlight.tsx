@@ -1,7 +1,10 @@
 import React from "react";
+import Card from "./card";
 function SkillsCard(){
     return(<>
-    <div></div>
+    <div>
+
+    </div>
     </>)
 }
 export default SkillsCard;

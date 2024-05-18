@@ -1,9 +1,9 @@
 import React from 'react';
 import 'animate.css/animate.min.css';
 import Card from '../cards/card';
-const Animated_Attr = () => {
+const AnimatedAttr = () => {
     return (
-        <div className=" flex flex-row animate__animated animate__fadeInUp animate__slow">
+        <div className=" p-[10px] justify-center overflow-hidden flex flex-row flex-wrap animate__animated animate__fadeInUp animate__slow">
             <Card></Card>
             <Card></Card>
             <Card></Card>
@@ -11,4 +11,4 @@ const Animated_Attr = () => {
     );
 };
 
-export default Animated_Attr;
+export default AnimatedAttr;

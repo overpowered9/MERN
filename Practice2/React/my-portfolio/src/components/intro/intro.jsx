@@ -3,13 +3,11 @@ import { Typewriter } from 'react-simple-typewriter'
 
 const Intro = () => {
     return (
-        <div className="w-[60vw] p-[5vw]"> 
-        
-            <div style={
-{color:'white',fontWeight:'bold',fontFamily:'monospace', fontSize:'40px'}
-            }>
-                <p className="font-mono text-sm sm:text-xl font-extrabold">Hi, I am</p>
-            <Typewriter cursor typeSpeed={100} className="font-mono text-xs"
+        <div className="w-[60vw] p-[5vw] sm:mt-12 overflow-hidden"> 
+        <p className="font-mono text-sm sm:text-xl font-extrabold">Hi, I am</p>
+            <div className=" text-lg text-white font-bold font-mono sm:text-3xl">
+                
+            <Typewriter cursor typeSpeed={100} 
             cursorStyle='.' cursorBlinking={false} words={['Zaid Asghar Virk']}></Typewriter> 
             <br /> 
            

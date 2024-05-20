@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-import './index.css';
+import Header from './components/header';
+import Intro from './components/intro/intro';
+import AnimatedImage from './components/animated_/animatedimage';
+import AnimatedAttr from './components/animated_/animated_attributes';
+import AboutMe from './components/about';
 function App() {
+  console.log("server is on")
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <div className="bg-black text-red-600">hy</div>
+    <>
+    <div className=" bg-slate-400">
+    <Header></Header>
+    <div className="min-h-[162px] flex flex-row sm:flex-row-reverse">
+  <Intro></Intro>
+  <AnimatedImage></AnimatedImage>
+</div>
     </div>
+    <div className=' w-[100%] overflow-hidden'>
+   <AnimatedAttr></AnimatedAttr> 
+   </div>
+   <div><AboutMe></AboutMe></div>
+    </>
+    
   );
 }
 

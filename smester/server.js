@@ -1,21 +1,21 @@
 const express = require('express');
 const app = express();
-const expressLayouts = require('express-ejs-layouts');
-app.use(expressLayouts);
-app.use(express.static('./public'));
-const port = 3000;
+app.set("view engine", "ejs");
+// Uncomment and ensure express-ejs-layouts is installed if you need it
+// const expressLayouts = require('express-ejs-layouts');
+// app.use(expressLayouts);
 
-app.set("view engine","ejs");
+app.use(express.static('./public'));
 
 app.get('/', (req, res) => {
-  res.render('partials/menu');
+  res.render('pages/home', { text12: 'hy' });
 });
-app.get('/home', (req, res) => {
-  res.render('homepage');
-});
-app.get('/contact', (req, res) => {
-  res.render('contact_us');
-});
+
+const userRouter = require('./routes/users');
+app.use('/users', userRouter);
+
+const port = 4000;
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });

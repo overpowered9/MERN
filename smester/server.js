@@ -13,6 +13,7 @@ app.use(express.static('./public'));
 
 const userRouter = require('./routes/users');
 const homeRouter = require('./routes/home');
+const productRouter = require('./routes/product');
 app.use('/users', userRouter);
 app.use('/', homeRouter);
 

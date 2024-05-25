@@ -1,18 +1,20 @@
 const express = require('express');
 const app = express();
+const expressLayouts = require('express-ejs-layouts');
+
 app.set("view engine", "ejs");
-// Uncomment and ensure express-ejs-layouts is installed if you need it
-// const expressLayouts = require('express-ejs-layouts');
-// app.use(expressLayouts);
+app.use(expressLayouts);
 
 app.use(express.static('./public'));
 
-app.get('/', (req, res) => {
-  res.render('pages/home', { text12: 'hy' });
-});
+// app.get('/', (req, res) => {
+//   res.render('pages/home', { text12: 'hy' });
+// });
 
 const userRouter = require('./routes/users');
+const homeRouter = require('./routes/home');
 app.use('/users', userRouter);
+app.use('/', homeRouter);
 
 const port = 4000;
 

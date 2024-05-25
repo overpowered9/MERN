@@ -7,7 +7,7 @@ function App() {
   console.log("server is on")
   return (
     <>
-    <div className=" bg-slate-400">
+    <div className=" bg-[#16262e]">
     <Header></Header>
     <div className="min-h-[162px] flex flex-row sm:flex-row-reverse">
   <Intro></Intro>

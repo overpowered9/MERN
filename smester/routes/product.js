@@ -3,3 +3,4 @@ const router= express.Router();
 router.get('/',(req,res)=>{
     res.render('pages/product_listings');
 });
+module.exports=router;

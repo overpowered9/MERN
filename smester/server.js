@@ -16,6 +16,7 @@ const homeRouter = require('./routes/home');
 const productRouter = require('./routes/product');
 app.use('/users', userRouter);
 app.use('/', homeRouter);
+app.use('/products',productRouter)
 
 const port = 4000;
 

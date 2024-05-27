@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shoe Store</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-8">
+  <h1 class="text-3xl font-bold mb-6">Shoe Store</h1>
+  
+  <!-- Form to add a new product -->
+  <form action="products/add" method="POST" class="bg-white p-6 rounded-lg shadow-md">
+    <div class="mb-4">
+      <label for="articleNumber" class="block text-gray-700 font-semibold mb-2">Article Number:</label>
+      <input type="text" id="articleNumber" name="articleNumber" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+    </div>
+    <div class="mb-4">
+      <label for="name" class="block text-gray-700 font-semibold mb-2">Name:</label>
+      <input type="text" id="name" name="name" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+    </div>
+    <div class="mb-4">
+      <label for="category" class="block text-gray-700 font-semibold mb-2">Category:</label>
+      <select id="category" name="category" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <option value="formal">Formal</option>
+        <option value="casual">Casual</option>
+        <option value="slippers">Slippers</option>
+      </select>
+    </div>
+    <div class="mb-4">
+      <label for="price" class="block text-gray-700 font-semibold mb-2">Price:</label>
+      <input type="number" id="price" name="price" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+    </div>
+    <div class="mb-4">
+      <label for="quantity" class="block text-gray-700 font-semibold mb-2">Quantity:</label>
+      <input type="number" id="quantity" name="quantity" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+    </div>
+    <div class="mb-4">
+      <label for="description" class="block text-gray-700 font-semibold mb-2">Description:</label>
+      <textarea id="description" name="description" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+    </div>
+    <div class="mb-4">
+      <label for="sizes" class="block text-gray-700 font-semibold mb-2">Sizes (comma-separated):</label>
+      <input type="text" id="sizes" name="sizes" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+    </div>
+    <div class="mb-4">
+      <label for="imageUrl" class="block text-gray-700 font-semibold mb-2">Image URL:</label>
+      <input type="text" id="imageUrl" name="imageUrl" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+    </div>
+    <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600">Add Product</button>
+  </form>
+  
+  <h2 class="text-2xl font-semibold mt-10 mb-4">Products</h2>
+  <ul>
+    <% products.forEach(product => { %>
+      <li class="bg-white p-4 mb-4 rounded-lg shadow-md">
+        <h3 class="text-xl font-bold"><%= product.name %> (<%= product.category %>)</h3>
+        <p>Article Number: <%= product.articleNumber %></p>
+        <p>Price: $<%= product.price %></p>
+        <p>Quantity: <%= product.quantity %></p>
+        <p>Description: <%= product.description %></p>
+        <p>Sizes: <%= product.sizes.join(', ') %></p>
+        <% if (product.imageUrl) { %>
+          <img src="<%= product.imageUrl %>" alt="<%= product.name %>" class="mt-2 w-32 h-32 object-cover">
+        <% } %>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>

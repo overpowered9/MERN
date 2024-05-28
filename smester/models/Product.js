@@ -5,10 +5,12 @@ const productSchema = new mongoose.Schema({
   name: { type: String, required: true },
   category: { type: String, enum: ['formal', 'casual', 'slippers'], required: true },
   price: { type: Number, required: true },
-  quantity: { type: Number, required: true },
   description: { type: String, required: true },
-  sizes: { type: [Number], required: true },
-  imageUrl: { type: String }
+  sizes: [{
+    size: { type: Number, required: true },
+    quantity: { type: Number, required: true }
+  }],
+  imageUrls: [{ type: String }] // Changed from single imageUrl to multiple imageUrls
 });
 
 const Product = mongoose.model('Product', productSchema);

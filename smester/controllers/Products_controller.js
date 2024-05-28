@@ -115,12 +115,52 @@ const getProductDetails = async (req, res) => {
         res.status(500).send('Error fetching product details');
     }
 };
-
+///////
+// controllers/Products_controller.js
+const viewCart = (req, res) => {
+    const cart = req.cookies.cart ? JSON.parse(req.cookies.cart) : [];
+    res.render('pages/cart', { cart: cart });
+  };
+  
+  const checkout = async (req, res) => {
+    const cart = JSON.parse(req.cookies.cart);
+    for (const item of cart) {
+      try {
+        const product = await Product.findById(item.productId);
+        if (!product) {
+          console.error(`Product with ID ${item.productId} not found`);
+          continue;
+        }
+  
+        const sizeObj = product.sizes.find(sizeObj => sizeObj.size === item.size);
+        if (!sizeObj) {
+          console.error(`Size ${item.size} not found for product with ID ${item.productId}`);
+          continue;
+        }
+  
+        if (sizeObj.quantity > 0) {
+          sizeObj.quantity -= 1;
+          await product.save();
+        } else {
+          console.error(`Not enough stock for size ${item.size} of product with ID ${item.productId}`);
+        }
+      } catch (error) {
+        console.error(`Error processing product with ID ${item.productId}:`, error);
+      }
+    }
+  
+    res.cookie('cart', '', { maxAge: 0 });
+    const trackingId = Math.random().toString(36).substring(2, 15);
+    res.render('pages/checkout', { trackingId });
+  };
+  
 module.exports = {
     getShoes,
     saveShoes,
     getProducts_listings,
     searchProducts,
     deleteProduct,
+    viewCart,
+    checkout,
     getProductDetails  // Export the new controller function
 };

@@ -1,3 +1,65 @@
-<div>
-    
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Listings</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-900">
+  <div class="container mx-auto px-4 py-8">
+  
+    <!-- Filters and Sorting Form -->
+    <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-8">
+      <form id="filterForm" action="/products/products_listings" method="GET" class="flex flex-row flex-wrap gap-2 items-center">
+        <div class="flex flex-col w-[250px] ">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="size">Filter by Size:</label>
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="number" id="size" name="size" placeholder="Size">
+        </div>
+        <div class="flex flex-col w-[250px]">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="priceMin">Filter by Price (Min):</label>
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="number" id="priceMin" name="priceMin" placeholder="Minimum Price">
+        </div>
+        <div class="flex flex-col w-[250px]">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="priceMax">Filter by Price (Max):</label>
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="number" id="priceMax" name="priceMax" placeholder="Maximum Price">
+        </div>
+        <div class="flex flex-col w-[250px]">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="sort">Sort by Price:</label>
+          <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="sort" name="sort">
+            <option value="">Select</option>
+            <option value="asc">Low to High</option>
+            <option value="desc">High to Low</option>
+          </select>
+        </div>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold  ml-[250px] p-3 rounded focus:outline-none focus:shadow-outline" type="submit">Apply Filters</button>
+      </form>
+    </div>
+    <h1 class="text-4xl font-bold mb-8 text-center">Products</h1>
+
+    <!-- Product Listings -->
+    <h2 class="text-3xl font-bold mb-4">Products</h2>
+    <ul class="flex flex-row flex-wrap gap-2">
+      <% products.forEach(product => { %>
+        <li class="flex flex-col w-[240px] rounded overflow-hidden items-center shadow-lg bg-white">
+          <% if (product.imageUrls && product.imageUrls.length > 0) { %>
+            <img class="w-[200px] aspect-auto" src="<%= product.imageUrls[0] %>" alt="<%= product.name %>">
+          <% } %>
+          <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-2"><%= product.name %></div>
+            <p class="flex justify-center text-gray-700 text-base"><%= product.articleNumber %></p>
+            <div>
+              <!-- sizes -->
+              <div class="flex flex-row gap-2 justify-center">
+                <% product.sizes.forEach(sizeObj => { %>
+                  <div class="bg-gray-200 p-2 flex justify-center"><%= sizeObj.size %></div>
+                <% }) %>
+              </div>
+            </div>
+          </div>
+        </li>
+      <% }) %>
+    </ul>    
+  </div>
+</body>
+</html>

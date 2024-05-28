@@ -1,8 +1,9 @@
 const express = require('express');
-const app = express();
+  const app = express();
 const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+app.use(express.static('./public'));
 
 app.set("view engine", "ejs");
 
@@ -20,7 +21,6 @@ mongoose.connect('mongodb://localhost:27017/shoeStore', {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(expressLayouts);
-app.use(express.static('./public'));
 
 const userRouter = require('./routes/users');
 const homeRouter = require('./routes/home');

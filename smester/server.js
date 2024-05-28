@@ -17,10 +17,14 @@ mongoose.connect('mongodb://localhost:27017/shoeStore', {
   console.error('Connection error', err);
 });
 
-
+//middlewares
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(expressLayouts);
+app.use(express.json());
+app.use(cookieParser());
+
+
 
 const userRouter = require('./routes/users');
 const homeRouter = require('./routes/home');

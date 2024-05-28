@@ -7,5 +7,6 @@ router.post('/add', productController.saveShoes);
 router.get('/products_listings', productController.getProducts_listings);
 router.get('/search', productController.searchProducts);
 router.post('/delete/:id', productController.deleteProduct);
+router.get('/product/:id', productController.getProductDetails);  // New route for product details
 
 module.exports = router;

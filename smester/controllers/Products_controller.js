@@ -104,10 +104,23 @@ const deleteProduct = async (req, res) => {
     }
 };
 
+// Controller function to get details of a single product
+const getProductDetails = async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const product = await Product.findById(id);
+        res.render('pages/product_details', { product });
+    } catch (error) {
+        res.status(500).send('Error fetching product details');
+    }
+};
+
 module.exports = {
     getShoes,
     saveShoes,
     getProducts_listings,
     searchProducts,
-    deleteProduct
+    deleteProduct,
+    getProductDetails  // Export the new controller function
 };

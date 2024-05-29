@@ -14,7 +14,7 @@ const visited_products= async (req, res) => {
 
     // Find the products by their IDs
     const visitedProducts = await Product.find({ _id: { $in: req.session.visitedProducts } });
-
+console.log('Visited products:', visitedProducts);
     res.render('pages/visited_products', { products: visitedProducts });
 };
 

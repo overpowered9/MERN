@@ -1,4 +1,23 @@
 const Product = require('../models/Product');
+const express = require('express');
+const app = express();
+const session = require('express-session');
+app.use(session({
+    secret: 'your-secret-key',
+    resave: false,
+    saveUninitialized: true
+}));
+const visited_products= async (req, res) => {
+    if (!req.session.visitedProducts || req.session.visitedProducts.length === 0) {
+        return res.render('pages/visited_products', { products: [] });
+    }
+
+    // Find the products by their IDs
+    const visitedProducts = await Product.find({ _id: { $in: req.session.visitedProducts } });
+
+    res.render('pages/visited_products', { products: visitedProducts });
+};
+
 const Shoesdata = async (req, res) => {
     const products = await Product.find();
     res.json({ products });
@@ -164,10 +183,21 @@ const deleteProduct = async (req, res) => {
 // Controller function to get details of a single product
 const getProductDetails = async (req, res) => {
     const { id } = req.params;
+    const productId = req.params.id;
+    if (!req.session.visitedProducts) {
+        req.session.visitedProducts = [];
+    }
+
+    // Add the current product ID to the visitedProducts array if it's not already there
+    if (!req.session.visitedProducts.includes(productId)) {
+        req.session.visitedProducts.push(productId);
+        console.log('Visited products:', req.session.visitedProducts);}
 
     try {
         const product = await Product.findById(id);
+
         res.render('pages/product_details', { product });
+        
     } catch (error) {
         res.status(500).send('Error fetching product details');
     }

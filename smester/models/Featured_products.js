@@ -10,8 +10,7 @@ const productSchema = new mongoose.Schema({
     size: { type: Number, required: true },
     quantity: { type: Number, required: true }
   }],
-  imageUrls: [{ type: String }] ,// Changed from single imageUrl to multiple imageUrls
-  isFeatured: { type: Boolean, default: false }
+  imageUrls: [{ type: String }] // Changed from single imageUrl to multiple imageUrls
 });
 
 const Product = mongoose.model('Product', productSchema);

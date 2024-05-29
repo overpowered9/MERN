@@ -16,5 +16,4 @@ router.post('/checkout', productController.checkout);
 // routes/product.js
 router.post('/cart/update/:productId/:size', productController.updateCartItem);
 
-
 module.exports = router;

@@ -1,7 +1,8 @@
 <!-- product.ejs (Partial Template) -->
 <div class="p-[20px]">
+  <h2 class="text-2xl font-bold mb-8 text-center">Featured Products</h2>
     <ul class="flex justify-center flex-row flex-wrap gap-2">
-      <% products.forEach(product => { %>
+      <% featuredProducts.forEach(product => { %>
         <li class="flex flex-col w-[240px] rounded overflow-hidden items-center shadow-lg bg-white p-4">
           <% if (product.imageUrls && product.imageUrls.length > 0) { %>
             <img class="w-[200px] aspect-auto cursor-pointer" src="<%= product.imageUrls[0] %>" alt="<%= product.name %>" onclick="window.location.href='/products/product/<%= product._id %>'">
@@ -42,7 +43,6 @@
   </div>
   
   <script>
-    let selectedProduct = null;
   
     function showSizeSelection(productId, productName, productPrice, productImage) {
       selectedProduct = { productId, productName, productPrice, productImage };

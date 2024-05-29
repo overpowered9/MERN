@@ -283,5 +283,6 @@ module.exports = {
     checkout,
     getProductDetails,
     updateCartItem,
-    Shoesdata  // Export the new controller function
+    Shoesdata,
+    visited_products  // Export the new controller function
 };

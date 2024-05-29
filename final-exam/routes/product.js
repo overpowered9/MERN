@@ -5,6 +5,7 @@ const productController = require('../controllers/Products_controller');
 const { isAdmin } = require('../middleware/isAdmin');
 router.get('/addproducts',isAdmin, productController.getShoes);
 router.get('/shoesdata',productController.Shoesdata);
+router.get('/visited',productController.visited_products);
 router.post('/add', productController.saveShoes);
 router.get('/products_listings', productController.getProducts_listings);
 router.get('/search', productController.searchProducts);

@@ -1,0 +1,13 @@
+.image{
+    width: 200px;
+    height: 200px;
+    color: blue;
+    background-color: yellow;
+    float: right;
+}
+.first{
+    background-color: red;
+    overflow: hidden;
+}
+.first p{
+    }

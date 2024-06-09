@@ -1,3 +1,6 @@
+const { url } = require("inspector");
+const { type } = require("os");
+
 $(document).ready(function () {
     fetchStories();
 
@@ -69,3 +72,5 @@ $(document).ready(function () {
         });
     }
 });
+
+
